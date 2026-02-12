@@ -26,12 +26,16 @@ void Player::handle_input() {
         acceleration.x += walk_acceleration;
     }
     if (key_states[SDL_SCANCODE_SPACE]) {
-        velocity.y = -jump_velocity;
+        velocity.y = jump_velocity;
+    }
+    if (key_states[SDL_SCANCODE_LSHIFT])
+    {
+        acceleration.x *= 2;
     }
 }
 
 void Player::update() {}
 
-std::pair<SDL_FRect, Color> Player::get_sprite() const {
-    return {{position.x, position.y, size.x, size.y}, {0, 100, 200}};
+std::pair<Vec<float>, Color> Player::get_sprite() const {
+    return {position, {0, 100, 200, 255}};
 }

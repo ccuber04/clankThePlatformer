@@ -15,9 +15,10 @@ public:
     void draw(const SDL_FRect& rect, const Color& color);
     void update();
 
+    int width, height;
+
 private:
     std::string title;
-    int width, height;
     SDL_Window* window;
     SDL_Renderer* renderer;
 };
