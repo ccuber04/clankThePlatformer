@@ -1,5 +1,6 @@
 #pragma once
 
+#include "physics.h"
 #include "tilemap.h"
 #include "vec.h"
 #include "toggle.h"
@@ -27,5 +28,6 @@ private:
 
     void calculate_visible_tiles();
     Vec<int> visible_min, visible_max;
-    Vec<float> goal, velocity, acceleration;
+    Vec<float> goal;
+    Physics physics;
 };

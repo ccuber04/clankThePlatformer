@@ -1,5 +1,5 @@
 #pragma once
-#include "player.h"
+#include "game_object.h"
 #include "world.h"
 #include "camera.h"
 
@@ -11,7 +11,7 @@ public:
     void render();
 
 private:
-    Player* player;
+    GameObject* player;
     World world;
     Graphics graphics;
     Camera camera;
