@@ -5,6 +5,7 @@
 #include "physics.h"
 #include "graphics.h"
 #include "vec.h"
+#include "fsm.h"
 
 class Color;
 
@@ -12,7 +13,7 @@ class World;
 
 class GameObject {
 public:
-    GameObject(const Vec<float>& position, const Vec<int>& size, World& world);
+    GameObject(const Vec<float>& position, const Vec<int>& size, World& world, FSM* fsm, Color color);
     ~GameObject();
 
     void input(World& world);
@@ -23,5 +24,6 @@ public:
     // Player data
     Physics physics;
     Vec<int> size;
-
+    FSM* fsm;
+    Color color;
 };

@@ -3,6 +3,7 @@
 #include <algorithm>
 
 #include "game_object.h"
+#include "states.h"
 #include "vec.h"
 #include "physics.h"
 
@@ -24,7 +25,18 @@ bool World::collides(const Vec<float>& position) const {
 }
 
 GameObject* World::create_player() {
-    player = std::make_unique<GameObject>(Vec<float>{10, 5}, Vec<int>{1, 1}, *this);
+    // Create the fsm
+    Transitions transitions = {
+        {{StateType::Standing, Transition::Jump}, StateType::InAir},
+        {{StateType::InAir, Transition::Stop}, StateType::Standing}
+    };
+    States states = {
+        {StateType::Standing, new Standing()},
+        {StateType::InAir, new InAir()}
+    };
+    FSM* fsm = new FSM{transitions, states, StateType::Standing};
+
+    player = std::make_unique<GameObject>(Vec<float>{10, 5}, Vec<int>{1, 1}, *this, fsm, Color{10, 200, 255, 255});
     return player.get();
 }
 
