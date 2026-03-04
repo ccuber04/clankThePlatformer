@@ -3,6 +3,7 @@
 #include <algorithm>
 
 #include "game_object.h"
+#include "keyboard_input.h"
 #include "states.h"
 #include "vec.h"
 #include "physics.h"
@@ -28,19 +29,31 @@ GameObject* World::create_player() {
     // Create the fsm
     Transitions transitions = {
         {{StateType::Standing, Transition::Jump}, StateType::InAir},
-        {{StateType::InAir, Transition::Stop}, StateType::Standing}
+        {{StateType::Standing, Transition::Move}, StateType::Running},
+        {{StateType::Standing, Transition::Crouch}, StateType::Crouching},
+        {{StateType::InAir, Transition::Stop}, StateType::Standing},
+        {{StateType::InAir, Transition::Move}, StateType::Running},
+        {{StateType::InAir, Transition::Jump}, StateType::DoubleJump},
+        {{StateType::Running, Transition::Stop}, StateType::Standing},
+        {{StateType::Running, Transition::Jump}, StateType::InAir},
+        {{StateType::Crouching, Transition::Stop}, StateType::Standing},
+        {{StateType::DoubleJump, Transition::Stop}, StateType::Standing}
     };
     States states = {
         {StateType::Standing, new Standing()},
-        {StateType::InAir, new InAir()}
+        {StateType::InAir, new InAir()},
+        {StateType::Running, new Running()},
+        {StateType::Crouching, new Crouching()},
+        {StateType::DoubleJump, new DoubleJump()}
     };
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
+    KeyboardInput* input = new KeyboardInput();
 
-    player = std::make_unique<GameObject>(Vec<float>{10, 5}, Vec<int>{1, 1}, *this, fsm, Color{10, 200, 255, 255});
+    player = std::make_unique<GameObject>(Vec<float>{10, 5}, Vec<float>{1, 1}, *this, fsm, input);
     return player.get();
 }
 
-void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velocity) {
+void World::move_to(Vec<float>& position, const Vec<float>& size, Vec<float>& velocity) {
     Vec<float> br{position.x + size.x, position.y};
     Vec<float> tl{position.x, position.y + size.y};
     Vec<float> tr{position.x + size.x, position.y + size.y};
@@ -118,6 +131,7 @@ void World::move_to(Vec<float>& position, const Vec<int>& size, Vec<float>& velo
 
 void World::update(float dt) {
     // currently only updating player
+    player->update(*this, dt);
     auto position = player->physics.position;
     auto velocity = player->physics.velocity;
     auto acceleration = player->physics.acceleration;

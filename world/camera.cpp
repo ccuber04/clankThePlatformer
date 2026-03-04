@@ -1,6 +1,7 @@
 #include "camera.h"
 
 #include "graphics.h"
+#include "game_object.h"
 
 Camera::Camera(Graphics& graphics, float tilesize)
     : graphics{graphics}, tilesize{tilesize} {
@@ -51,10 +52,11 @@ void Camera::set_location(const Vec<float> &new_location) {
     calculate_visible_tiles();
 }
 
-void Camera::render(const Vec<float>& position, const Color& color, bool filled) const {
+void Camera::render(const Vec<float>& position, const Color& color, const Vec<float>& size, bool filled) const {
+    float y_size = (size.y > 0) ? size.y * tilesize : tilesize;
     Vec<float> pixel = world_to_screen(position);
-    pixel -= Vec{tilesize/2, tilesize/2}; // center on tile
-    SDL_FRect rect{pixel.x, pixel.y, tilesize, tilesize};
+    pixel -= Vec{tilesize/2, y_size}; // center on tile
+    SDL_FRect rect{pixel.x, pixel.y, tilesize, y_size};
     graphics.draw(rect, color, filled);
 }
 
@@ -81,4 +83,15 @@ void Camera::render(const Tilemap& tilemap) const {
             }
         }
     }
+}
+
+void Camera::render(const Vec<float>& position, const Sprite& sprite) const {
+    Vec<float> pixel = world_to_screen(position);
+    pixel.y += tilesize/2;
+    graphics.draw_sprite(pixel, sprite);
+}
+
+void Camera::render(const GameObject& obj) const {
+    render(obj.physics.position, obj.color, obj.size);
+    render(obj.physics.position, obj.sprite);
 }
