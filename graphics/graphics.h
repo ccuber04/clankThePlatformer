@@ -22,7 +22,7 @@ public:
     int get_texture_id(const std::string& image_filename);
     void draw_sprite(const Vec<float>& pixel, const Sprite& sprite);
 
-    int width, height;
+    const int width, height;
 
 private:
     std::string title;

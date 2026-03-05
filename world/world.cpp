@@ -49,7 +49,7 @@ GameObject* World::create_player() {
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
     KeyboardInput* input = new KeyboardInput();
 
-    player = std::make_unique<GameObject>(Vec<float>{10, 5}, Vec<float>{1, 1}, *this, fsm, input);
+    player = std::make_unique<GameObject>(Vec<float>{1, 1}, *this, fsm, input);
     return player.get();
 }
 

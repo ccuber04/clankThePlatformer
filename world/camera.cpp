@@ -1,11 +1,12 @@
 #include "camera.h"
 
-#include "graphics.h"
 #include "game_object.h"
+#include "graphics.h"
 
 Camera::Camera(Graphics& graphics, float tilesize)
     : graphics{graphics}, tilesize{tilesize} {
     calculate_visible_tiles();
+    physics.damping = 0.88f;
 }
 
 void Camera::calculate_visible_tiles() {
@@ -52,11 +53,10 @@ void Camera::set_location(const Vec<float> &new_location) {
     calculate_visible_tiles();
 }
 
-void Camera::render(const Vec<float>& position, const Color& color, const Vec<float>& size, bool filled) const {
-    float y_size = (size.y > 0) ? size.y * tilesize : tilesize;
+void Camera::render(const Vec<float>& position, const Color& color, bool filled) const {
     Vec<float> pixel = world_to_screen(position);
-    pixel -= Vec{tilesize/2, y_size}; // center on tile
-    SDL_FRect rect{pixel.x, pixel.y, tilesize, y_size};
+    pixel -= Vec{tilesize/2, tilesize/2}; // center on tile
+    SDL_FRect rect{pixel.x, pixel.y, tilesize, tilesize};
     graphics.draw(rect, color, filled);
 }
 
@@ -79,7 +79,7 @@ void Camera::render(const Tilemap& tilemap) const {
                 render(position, {0, 127, 127, 255});
             }
             if (grid_toggle.on) {
-                render(position, {0, 0, 0, 255}, false);
+                render(position, {0, 0, 0, 0}, false);
             }
         }
     }
@@ -92,6 +92,8 @@ void Camera::render(const Vec<float>& position, const Sprite& sprite) const {
 }
 
 void Camera::render(const GameObject& obj) const {
-    render(obj.physics.position, obj.color, obj.size);
+    if (grid_toggle.on) {
+        render(obj.physics.position, obj.color);
+    }
     render(obj.physics.position, obj.sprite);
 }

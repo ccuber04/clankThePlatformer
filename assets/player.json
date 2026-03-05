@@ -1,8 +1,59 @@
 {
-  "idle": {
-    "filename": "player_idle.png",
-    "location": [0, 0],
-    "size": [32, 32],
-    "scale": 2
+  "sprites": [
+    {
+      "name": "idle",
+      "filename": "hooded_protagonist.png",
+      "location": [0, 0],
+      "size": [32, 32],
+      "scale": 2.4,
+      "number_of_frames": 8,
+      "dt_per_frame": 0.18
+    },
+    {
+      "name": "walking",
+      "filename": "hooded_protagonist.png",
+      "location": [0, 32],
+      "size": [32, 32],
+      "scale": 2.4,
+      "number_of_frames": 4,
+      "dt_per_frame": 0.18
+    },
+    {
+      "name": "jumping",
+      "filename": "hooded_protagonist.png",
+      "location": [0, 160],
+      "size": [32, 32],
+      "scale": 2.4,
+      "number_of_frames": 8,
+      "dt_per_frame": 0.2
+    },
+    {
+      "name": "crouch",
+      "filename": "hooded_protagonist.png",
+      "location": [0, 96],
+      "size": [32, 32],
+      "scale": 2.4,
+      "number_of_frames": 4,
+      "dt_per_frame": 0.1
+    },
+    {
+      "name": "uncrouch",
+      "filename": "hooded_protagonist.png",
+      "location": [0, 128],
+      "size": [32, 32],
+      "scale": 2.4,
+      "number_of_frames": 2,
+      "dt_per_frame": 0.1
+    }
+  ],
+  "physics": {
+    "position": [10, 5],
+    "velocity": [0, 0],
+    "acceleration": [0, -30],
+    "gravity": -30.0,
+    "damping": 0.88,
+    "walk_acceleration": 50.0,
+    "jump_velocity": 17.0,
+    "terminal_velocity": 30.0
   }
 }

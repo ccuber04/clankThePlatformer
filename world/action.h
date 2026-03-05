@@ -8,7 +8,6 @@ enum class ActionType {
     Crouch,
     CrouchMoveLeft,
     CrouchMoveRight
-    // Uncrouch
 };
 
 class World;

@@ -13,9 +13,9 @@ public:
     Vec<float> velocity{0, 0};
     Vec<float> acceleration{0, 0};
 
-    float gravity{-30.0f};
-    float damping{0.88f};
-    float walk_acceleration{50.0f};
-    float jump_velocity{15.0f};
-    float terminal_velocity{30.0f};
+    float gravity{0.0f};
+    float damping{0.0};
+    float walk_acceleration{0.0f};
+    float jump_velocity{0.0f};
+    float terminal_velocity{0.0f};
 };

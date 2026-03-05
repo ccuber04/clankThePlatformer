@@ -2,23 +2,27 @@
 
 #include <utility>
 
-#include "physics.h"
-#include "graphics.h"
+#include <map>
 #include "vec.h"
 #include "fsm.h"
-#include "input.h"
+#include "graphics.h"
+#include "physics.h"
+#include "animated_sprite.h"
 
-class Color;
 class World;
+class Input;
+
+using Sprites = std::map<std::string, AnimatedSprite>;
 
 class GameObject {
 public:
-    GameObject(const Vec<float>& position, const Vec<float>& size, World& world, FSM* fsm, Input* input, const Color& color={255, 255, 255, 255});
+    GameObject(const Vec<float>& size, World& world, FSM* fsm, Input* input, const Color& color={255, 255, 255, 255});
     ~GameObject();
 
     void update(World& world, double dt);
 
     std::pair<Vec<float>, Color> get_sprite() const;
+    void set_sprite(const std::string& next_sprite);
 
     // Player data
     Physics physics;
@@ -26,5 +30,7 @@ public:
     FSM* fsm;
     Input* input;
     Color color;
+    Sprites sprites;
     Sprite sprite;
+    std::string sprite_name;
 };
