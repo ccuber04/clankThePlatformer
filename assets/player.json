@@ -21,20 +21,20 @@
     {
       "name": "jumping",
       "filename": "hooded_protagonist.png",
-      "location": [0, 160],
+      "location": [64, 160],
       "size": [32, 32],
       "scale": 2.4,
-      "number_of_frames": 8,
+      "number_of_frames": 6,
       "dt_per_frame": 0.2
     },
     {
       "name": "crouch",
       "filename": "hooded_protagonist.png",
-      "location": [0, 96],
+      "location": [96, 96],
       "size": [32, 32],
       "scale": 2.4,
-      "number_of_frames": 4,
-      "dt_per_frame": 0.1
+      "number_of_frames": 1,
+      "dt_per_frame": -1
     },
     {
       "name": "uncrouch",

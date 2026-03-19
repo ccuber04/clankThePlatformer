@@ -19,7 +19,6 @@ void Standing::on_enter(World&, GameObject& obj) {
     obj.color = Color{255, 255, 255, 255};
     obj.physics.acceleration.x = 0;
     obj.set_sprite("idle");
-    std::cout << "Standing\n";
 }
 
 void Standing::update(World& world, GameObject& obj, double) {
@@ -30,7 +29,6 @@ void Standing::update(World& world, GameObject& obj, double) {
 
 Action* Standing::input(World& world, GameObject& obj, ActionType action_type) {
     if (action_type == ActionType::Jump && on_platform(world, obj)) {
-        std::cout << "Standing->InAir\n";
         obj.fsm->transition(Transition::Jump, world, obj);
         return new Jump();
     }
@@ -54,7 +52,6 @@ void InAir::on_enter(World&, GameObject& obj) {
     elapsed = cooldown;
     obj.color = Color{0, 0, 255, 255};
     obj.set_sprite("jumping");
-    std::cout << "InAir\n";
 }
 
 void InAir::update(World& world, GameObject& obj, double dt) {
@@ -74,7 +71,6 @@ Action* InAir::input(World& world, GameObject& obj, ActionType action_type) {
         return new MoveLeft();
     }
     if (action_type == ActionType::Jump) {
-        std::cout << "InAir->DoubleJump\n";
         obj.fsm->transition(Transition::Jump, world, obj);
         return new Jump();
     }
@@ -85,7 +81,6 @@ Action* InAir::input(World& world, GameObject& obj, ActionType action_type) {
 void Running::on_enter(World&, GameObject& obj) {
     obj.color = Color{255, 255, 0};
     obj.set_sprite("walking");
-    std::cout << "Running\n";
 }
 
 void Running::update(World& world, GameObject& obj, double) {
@@ -99,7 +94,6 @@ Action* Running::input(World& world, GameObject& obj, ActionType action_type) {
         obj.fsm->transition(Transition::Stop, world, obj);
     }
     if (action_type == ActionType::Jump && on_platform(world, obj)) {
-        std::cout << "Running->InAir\n";
         obj.fsm->transition(Transition::Jump, world, obj);
         return new Jump();
     }
@@ -122,7 +116,6 @@ Action* Running::input(World& world, GameObject& obj, ActionType action_type) {
 void Crouching::on_enter(World&, GameObject& obj) {
     obj.color = Color{255, 0, 255, 255};
     obj.set_sprite("crouch");
-    std::cout << "Crouching\n";
 }
 
 void Crouching::on_exit(World&, GameObject& obj) {
@@ -141,7 +134,6 @@ Action* Crouching::input(World& world, GameObject& obj, ActionType action_type) 
 void DoubleJump::on_enter(World&, GameObject& obj) {
     obj.color = Color{10, 200, 255, 255};
     obj.set_sprite("jumping");
-    std::cout << "DoubleJump\n";
 }
 
 void DoubleJump::update(World& world, GameObject& obj, double dt) {
