@@ -2,7 +2,14 @@
 
 #include <vector>
 
-enum class Tile{Open, Platform};
+#include "sprite.h"
+
+class Tile {
+public:
+    Sprite sprite;
+    bool blocking{false};
+    std::string id;
+};
 
 class Tilemap {
 public:
