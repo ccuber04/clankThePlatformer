@@ -1,0 +1,303 @@
+{
+  "tiles": [
+    {
+      "sprite": {
+        "name": "void_block",
+        "filename": "szadi_main_lev_build.png",
+        "location": [32, 144],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "three_blue_brick_tiled_big_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [672, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "two_blue_brick_tiled_thin_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [704, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "two_blue_brick_tiled_thick_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [720, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "left_edge_floor_top_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [192, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "left_edge_floor_top_middle",
+        "filename": "szadi_main_lev_build.png",
+        "location": [208, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "left_edge_floor_top_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [224, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "left_edge_floor_bottom_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [192, 208],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "left_edge_floor_overhang",
+        "filename": "szadi_main_lev_build.png",
+        "location": [208, 208],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "one_block_tile_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [256, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "one_block_tile_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [272, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "one_block_tile_single",
+        "filename": "szadi_main_lev_build.png",
+        "location": [304, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "one_block_tile_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [256, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "right_edge_floor_top_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [336, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "right_edge_floor_top_middle",
+        "filename": "szadi_main_lev_build.png",
+        "location": [352, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "right_edge_floor_top_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [368, 192],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "right_edge_floor_overhang",
+        "filename": "szadi_main_lev_build.png",
+        "location": [352, 208],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "right_edge_floor_bottom_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [368, 208],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "right_edge_floor_bottom_right",
+        "filename": "szadi_main_lev_build.png",
+        "location": [368, 208],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "three_blue_brick_tiled_big_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [944, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "three_blue_brick_tiled_big_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [992, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "two_blue_brick_tiled_thin_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [960, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "two_blue_brick_tiled_thick_left",
+        "filename": "szadi_main_lev_build.png",
+        "location": [944, 64],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": ""
+    }
+  ]
+}

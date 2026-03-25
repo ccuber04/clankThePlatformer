@@ -20,5 +20,5 @@ public:
     TileLocations tile_locations;
     std::map<std::string, Tile> tile_types;
 
-    Vec<int> spaw_location{-1, -1};
+    Vec<int> player_spawn_location{-1, -1};
 };

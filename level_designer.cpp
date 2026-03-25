@@ -81,11 +81,15 @@ void LevelDesigner::input() {
     prev_counter = now;
     const bool* keys = SDL_GetKeyboardState(nullptr);
 
-    if (keys[SDL_SCANCODE_DELETE] && selected_tile.x >= 0 && selected_tile.y >= 0) {
+    if ((keys[SDL_SCANCODE_DELETE] || keys[SDL_SCANCODE_BACKSPACE]) && selected_tile.x >= 0 && selected_tile.y >= 0) {
         tilemap(selected_tile.x, selected_tile.y) = Tile{};
     }
-    if (keys[SDL_SCANCODE_S] && (keys[SDL_SCANCODE_LCTRL] || keys[SDL_SCANCODE_RCTRL])) {
+    // RGUI & LGUI for CMD on mac
+    if (keys[SDL_SCANCODE_S] && (keys[SDL_SCANCODE_LCTRL] || keys[SDL_SCANCODE_RCTRL] || keys[SDL_SCANCODE_LGUI] || keys[SDL_SCANCODE_RGUI])) {
         save();
+    }
+    if (keys[SDL_SCANCODE_P]) {
+        place_player();
     }
 
     // timer for scrolling
@@ -127,6 +131,11 @@ void LevelDesigner::render() {
                 SDL_FRect rect{screen_x, screen_y, static_cast<float>(TILESIZE), static_cast<float>(TILESIZE)};
                 Color color = selected_tile == Vec<int>{tilemap_x, tilemap_y} ? Color{255, 255, 0, 255} : Color{0, 0, 0, 255};
                 graphics.draw(rect, color, false);
+
+                // render player location as translucent purple
+                if (level.player_spawn_location.x == tilemap_x && level.player_spawn_location.y == tilemap_y) {
+                    graphics.draw(rect, {255, 0, 255, 100}, true);
+                }
             }
         }
     }
@@ -177,4 +186,8 @@ void LevelDesigner::save() {
         }
     }
     AssetManager::update_level_details(level);
+}
+
+void LevelDesigner::place_player() {
+    level.player_spawn_location = selected_tile;
 }

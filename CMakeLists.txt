@@ -53,7 +53,7 @@ add_library(game_lib
     level_designer.cpp level_designer.h
 )
 
-target_link_libraries(game_lib PUBLIC SDL3::SDL3 graphics world utils)
+target_link_libraries(game_lib PUBLIC SDL3::SDL3 SDL3_mixer::SDL3_mixer graphics world utils)
 add_executable(game main.cpp)
 target_link_libraries(game PUBLIC game_lib)
 

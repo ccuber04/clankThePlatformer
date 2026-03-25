@@ -38,4 +38,5 @@ private:
     void update_title();
     void draw_tile_display();
     void update_tilemap();
+    void place_player();
 };
