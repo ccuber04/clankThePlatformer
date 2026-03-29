@@ -5,6 +5,7 @@
 #include "game_object.h"
 #include "tilemap.h"
 #include "vec.h"
+#include "events.h"
 
 class GameObject;
 class Level;
@@ -12,7 +13,7 @@ class Audio;
 
 class World {
 public:
-    World(const Level& level, Audio& audio);
+    World(const Level& level, Audio& audio, GameObject* player, Events events);
 
     void add_platform(float x, float y, float width, float height);
     bool collides(const Vec<float>& position) const;
@@ -22,8 +23,12 @@ public:
     void load_level(const Level& level);
 
     Tilemap tilemap;
+    bool end_level{false};
 
 private:
     GameObject* player;
     Audio* audio;
+    Events events;
+
+    void touch_tiles(GameObject& obj);
 };
