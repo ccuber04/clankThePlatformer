@@ -970,6 +970,34 @@
         {
             "pos": [
                 26,
+                5
+            ],
+            "tile": "castle_tiles.json:bottom_left_doorway"
+        },
+        {
+            "pos": [
+                26,
+                6
+            ],
+            "tile": "castle_tiles.json:lower_middle_left_doorway"
+        },
+        {
+            "pos": [
+                26,
+                7
+            ],
+            "tile": "castle_tiles.json:upper_middle_left_doorway"
+        },
+        {
+            "pos": [
+                26,
+                8
+            ],
+            "tile": "castle_tiles.json:top_left_doorway"
+        },
+        {
+            "pos": [
+                26,
                 14
             ],
             "tile": "castle_tiles.json:void_block"
@@ -1008,6 +1036,34 @@
                 4
             ],
             "tile": "castle_tiles.json:two_blue_brick_tiled_thick_right"
+        },
+        {
+            "pos": [
+                27,
+                5
+            ],
+            "tile": "castle_tiles.json:bottom_left_middle_doorway"
+        },
+        {
+            "pos": [
+                27,
+                6
+            ],
+            "tile": "castle_tiles.json:lower_middle_left_middle_doorway"
+        },
+        {
+            "pos": [
+                27,
+                7
+            ],
+            "tile": "castle_tiles.json:upper_middle_left_middle_doorway"
+        },
+        {
+            "pos": [
+                27,
+                8
+            ],
+            "tile": "castle_tiles.json:top_left_middle_doorway"
         },
         {
             "pos": [
@@ -1054,6 +1110,34 @@
         {
             "pos": [
                 28,
+                5
+            ],
+            "tile": "castle_tiles.json:bottom_right_middle_doorway"
+        },
+        {
+            "pos": [
+                28,
+                6
+            ],
+            "tile": "castle_tiles.json:lower_middle_right_middle_doorway"
+        },
+        {
+            "pos": [
+                28,
+                7
+            ],
+            "tile": "castle_tiles.json:upper_middle_right_middle_doorway"
+        },
+        {
+            "pos": [
+                28,
+                8
+            ],
+            "tile": "castle_tiles.json:top_right_middle_doorway"
+        },
+        {
+            "pos": [
+                28,
                 14
             ],
             "tile": "castle_tiles.json:void_block"
@@ -1092,6 +1176,34 @@
                 4
             ],
             "tile": "castle_tiles.json:three_blue_brick_tiled_big_left"
+        },
+        {
+            "pos": [
+                29,
+                5
+            ],
+            "tile": "castle_tiles.json:bottom_right_doorway"
+        },
+        {
+            "pos": [
+                29,
+                6
+            ],
+            "tile": "castle_tiles.json:lower_middle_right_doorway"
+        },
+        {
+            "pos": [
+                29,
+                7
+            ],
+            "tile": "castle_tiles.json:upper_middle_right_doorway"
+        },
+        {
+            "pos": [
+                29,
+                8
+            ],
+            "tile": "castle_tiles.json:top_right_doorway"
         },
         {
             "pos": [

@@ -298,6 +298,214 @@
       },
       "blocking": true,
       "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "top_left_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1472, 96],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "top_left_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1488, 96],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "top_right_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1504, 96],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "top_right_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1520, 96],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "upper_middle_left_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1472, 112],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "upper_middle_left_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1488, 112],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "upper_middle_right_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1504, 112],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "upper_middle_right_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1520, 112],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "lower_middle_left_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1472, 128],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "lower_middle_left_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1488, 128],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "lower_middle_right_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1504, 128],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "lower_middle_right_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1520, 128],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "bottom_left_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1472, 144],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
+    },
+    {
+      "sprite": {
+        "name": "bottom_left_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1488, 144],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "bottom_right_middle_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1504, 144],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": true,
+      "event_name": "next_level"
+    },
+    {
+      "sprite": {
+        "name": "bottom_right_doorway",
+        "filename": "szadi_main_lev_build.png",
+        "location": [1520, 144],
+        "size": [16, 16],
+        "scale": 4,
+        "number_of_frames": 1,
+        "dt_per_frame": -1
+      },
+      "blocking": false,
+      "event_name": ""
     }
   ]
 }

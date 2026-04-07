@@ -106,7 +106,7 @@ void Game::create_player() {
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
     KeyboardInput* input = new KeyboardInput();
 
-    player = new GameObject(Vec<float>{static_cast<float>(level.player_spawn_location.x), static_cast<float>(level.player_spawn_location.y)}, Vec<float>{1, 1}, *this, fsm, input);
+    player = std::make_unique<GameObject>(Vec<float>{1, 1}, fsm, input);
 }
 
 void Game::load_level() {

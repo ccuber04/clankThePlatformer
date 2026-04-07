@@ -130,6 +130,13 @@
         {
             "pos": [
                 1,
+                8
+            ],
+            "tile": "castle_tiles.json:two_blue_brick_tiled_thick_right"
+        },
+        {
+            "pos": [
+                1,
                 14
             ],
             "tile": "castle_tiles.json:void_block"
@@ -147,6 +154,13 @@
                 1
             ],
             "tile": "castle_tiles.json:one_block_tile_left"
+        },
+        {
+            "pos": [
+                2,
+                8
+            ],
+            "tile": "castle_tiles.json:two_blue_brick_tiled_thin_left"
         },
         {
             "pos": [
@@ -186,16 +200,9 @@
         {
             "pos": [
                 4,
-                9
-            ],
-            "tile": "castle_tiles.json:two_blue_brick_tiled_thick_right"
-        },
-        {
-            "pos": [
-                4,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:right_edge_floor_overhang"
         },
         {
             "pos": [
@@ -207,16 +214,16 @@
         {
             "pos": [
                 5,
-                9
+                13
             ],
-            "tile": "castle_tiles.json:two_blue_brick_tiled_thin_left"
+            "tile": "castle_tiles.json:right_edge_floor_overhang"
         },
         {
             "pos": [
                 5,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
         },
         {
             "pos": [
@@ -228,9 +235,23 @@
         {
             "pos": [
                 6,
+                12
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_overhang"
+        },
+        {
+            "pos": [
+                6,
+                13
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                6,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
         },
         {
             "pos": [
@@ -249,9 +270,30 @@
         {
             "pos": [
                 7,
+                11
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_overhang"
+        },
+        {
+            "pos": [
+                7,
+                12
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                7,
+                13
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                7,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
         },
         {
             "pos": [
@@ -277,9 +319,65 @@
         {
             "pos": [
                 8,
+                6
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_overhang"
+        },
+        {
+            "pos": [
+                8,
+                7
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                8,
+                8
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                8,
+                9
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                8,
+                10
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                8,
+                11
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                8,
+                12
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                8,
+                13
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                8,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
         },
         {
             "pos": [
@@ -312,16 +410,65 @@
         {
             "pos": [
                 9,
+                6
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_overhang"
+        },
+        {
+            "pos": [
+                9,
+                7
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                9,
                 8
             ],
-            "tile": "castle_tiles.json:two_blue_brick_tiled_thin_right"
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                9,
+                9
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                9,
+                10
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                9,
+                11
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                9,
+                12
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
+        },
+        {
+            "pos": [
+                9,
+                13
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
         },
         {
             "pos": [
                 9,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
         },
         {
             "pos": [
@@ -354,16 +501,30 @@
         {
             "pos": [
                 10,
-                8
+                11
             ],
-            "tile": "castle_tiles.json:three_blue_brick_tiled_big_right"
+            "tile": "castle_tiles.json:left_edge_floor_overhang"
+        },
+        {
+            "pos": [
+                10,
+                12
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
+        },
+        {
+            "pos": [
+                10,
+                13
+            ],
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
         },
         {
             "pos": [
                 10,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
         },
         {
             "pos": [
@@ -396,16 +557,23 @@
         {
             "pos": [
                 11,
-                8
+                12
             ],
-            "tile": "castle_tiles.json:three_blue_brick_tiled_big_left"
+            "tile": "castle_tiles.json:left_edge_floor_overhang"
+        },
+        {
+            "pos": [
+                11,
+                13
+            ],
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
         },
         {
             "pos": [
                 11,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:right_edge_floor_bottom_right"
         },
         {
             "pos": [
@@ -438,16 +606,16 @@
         {
             "pos": [
                 12,
-                8
+                13
             ],
-            "tile": "castle_tiles.json:two_blue_brick_tiled_thin_left"
+            "tile": "castle_tiles.json:left_edge_floor_overhang"
         },
         {
             "pos": [
                 12,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:left_edge_floor_bottom_left"
         },
         {
             "pos": [
@@ -482,7 +650,7 @@
                 13,
                 14
             ],
-            "tile": "castle_tiles.json:void_block"
+            "tile": "castle_tiles.json:left_edge_floor_overhang"
         },
         {
             "pos": [
