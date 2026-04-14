@@ -4,9 +4,10 @@
 #include <fstream>
 
 #include "game_object.h"
+#include "random.h"
 
 // helper function to convert a list of sprites to animated sprites
-void convert_sprites(std::vector<Sprite>& sprites, Graphics& graphics, GameObject& obj) {
+void convert_sprites(std::vector<Sprite>& sprites, Graphics& graphics, GameObject& obj, bool random_start) {
     for (auto& sprite : sprites) {
         auto first_location = sprite.location;
         sprite.filename = (std::filesystem::current_path() / "assets" / sprite.filename).string();
@@ -18,11 +19,12 @@ void convert_sprites(std::vector<Sprite>& sprites, Graphics& graphics, GameObjec
             sprite.location = {first_location.x + i * sprite.size.x, first_location.y};
             sprite_frames.push_back(sprite);
         }
-        obj.sprites[sprite.name] = AnimatedSprite{sprite_frames, sprite.dt_per_frame};
+        int starting_frame = random_start ? randint(0, sprite.number_of_frames - 1) : 0;
+        obj.sprites[sprite.name] = AnimatedSprite{sprite_frames, sprite.dt_per_frame, starting_frame};
     }
 }
 
-void AssetManager::get_game_object_details(const std::string& name, Graphics& graphics, GameObject& obj) {
+void AssetManager::get_game_object_details(const std::string& name, Graphics& graphics, GameObject& obj, bool random_start) {
     auto path_start = std::filesystem::current_path() / "assets";
     auto path = path_start/ (name + ".json");
 
@@ -36,11 +38,18 @@ void AssetManager::get_game_object_details(const std::string& name, Graphics& gr
 
     // get the object's sprites
     std::vector<Sprite> sprites_from_json = json.at("sprites").get<std::vector<Sprite>>();
-    convert_sprites(sprites_from_json, graphics, obj);
+    convert_sprites(sprites_from_json, graphics, obj, random_start);
 
     // get the object's physics
+    auto pos = obj.physics.position;
     Physics physics = json.at("physics").get<Physics>();
     obj.physics = physics;
+    obj.physics.position = pos;
+
+    // get the object's size
+    obj.size = json.at("size").get<Vec<float>>();
+
+    obj.set_sprite("idle");
 }
 
 void convert_to_tiles(Graphics& graphics, Level& level, std::vector<Tile>& tiles, const std::string& filename) {

@@ -10,23 +10,12 @@ Game::Game(std::string title, int width, int height)
     // load events
     get_events();
 
-    // load the first level
-    Level level{"level_1"};
-    AssetManager::get_level_details(graphics, level);
-
     // Give player its assets then put it in the correct state
     create_player();
     AssetManager::get_game_object_details("player", graphics, *player);
 
-    // create the world for the first level
-    world = new World(level, audio, player.get(), events);
-
-    // use the spawn location's position
-    player->physics.position = {static_cast<float>(level.player_spawn_location.x), static_cast<float>(level.player_spawn_location.y)};
-    player->fsm->current_state->on_enter(*world, *player);
-
-    camera.set_location(player->physics.position);
-    audio.play_sounds("background", true);
+    // load first level
+    load_level();
 }
 
 Game::~Game() {
@@ -74,6 +63,11 @@ void Game::render() {
     // draw the player
     camera.render(*player);
 
+    // enemies
+    for (auto& obj : world->game_objects) {
+        camera.render(*obj);
+    }
+
     // update
     graphics.update();
 }
@@ -106,7 +100,7 @@ void Game::create_player() {
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
     KeyboardInput* input = new KeyboardInput();
 
-    player = std::make_unique<GameObject>(Vec<float>{1, 1}, fsm, input);
+    player = std::make_unique<GameObject>("player", fsm, input);
 }
 
 void Game::load_level() {
@@ -118,7 +112,16 @@ void Game::load_level() {
     delete world;
     world = new World(level, audio, player.get(), events);
 
+    // assets for objs
+    for (auto& obj : world->game_objects) {
+        if (obj == world->player) {
+            continue;
+        }
+        AssetManager::get_game_object_details(obj->obj_name + "-enemy", graphics, *obj, true);
+    }
+
     player->physics.position = {static_cast<float>(level.player_spawn_location.x), static_cast<float>(level.player_spawn_location.y)};
+    player->fsm->current_state->on_enter(*world, *player);
     camera.set_location(player->physics.position);
     audio.play_sounds("background", true);
 }

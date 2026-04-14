@@ -16,7 +16,7 @@ using Sprites = std::map<std::string, AnimatedSprite>;
 
 class GameObject {
 public:
-    GameObject(const Vec<float>& size, FSM* fsm, Input* input, const Color& color={255, 255, 255, 255});
+    GameObject(std::string name, FSM* fsm, Input* input, const Color& color={255, 255, 255, 255});
     ~GameObject();
 
     void update(World& world, double dt);
@@ -25,6 +25,7 @@ public:
     void set_sprite(const std::string& next_sprite);
 
     // Player data
+    std::string obj_name;
     Physics physics;
     Vec<float> size;
     FSM* fsm;

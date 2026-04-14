@@ -14,6 +14,7 @@ class Audio;
 class World {
 public:
     World(const Level& level, Audio& audio, GameObject* player, Events events);
+    ~World();
 
     void add_platform(float x, float y, float width, float height);
     bool collides(const Vec<float>& position) const;
@@ -25,9 +26,9 @@ public:
     Tilemap tilemap;
     bool end_level{false};
 
-private:
     GameObject* player;
     Audio* audio;
+    std::vector<GameObject*> game_objects;
     Events events;
 
     void touch_tiles(GameObject& obj);
