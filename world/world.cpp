@@ -37,9 +37,10 @@ bool World::collides(const Vec<float>& position) const {
 }
 
 void World::move_to(Vec<float>& position, const Vec<float>& size, Vec<float>& velocity) {
-    Vec<float> br{position.x + size.x, position.y};
-    Vec<float> tl{position.x, position.y + size.y};
-    Vec<float> tr{position.x + size.x, position.y + size.y};
+    float epsilon = 0.0f;
+    Vec<float> br{position.x + size.x - epsilon, position.y};
+    Vec<float> tl{position.x, position.y + size.y - epsilon};
+    Vec<float> tr{position.x + size.x - epsilon, position.y + size.y - epsilon};
 
     // test for collisions on the bottom or top first
     if (collides(position) && collides(br)) {
@@ -163,11 +164,19 @@ void World::load_level(const Level& level) {
 }
 
 void World::touch_tiles(GameObject& obj) {
-    int x = std::floor(obj.physics.position.x);
-    int y = std::floor(obj.physics.position.y);
-    const std::vector<Vec<int>> displacements{{0, 0}, {static_cast<int>(obj.size.x), 0}, {0, static_cast<int>(obj.size.y)}, {static_cast<int>(obj.size.x), static_cast<int>(obj.size.y)}};
-    for (const auto& displacement : displacements) {
-        Tile& tile = tilemap(x + displacement.x, y + displacement.y);
+    float epsilon = 0.001f;
+
+    const std::vector<Vec<float>> tiles {
+                {obj.physics.position.x - epsilon, obj.physics.position.y},
+                {obj.physics.position.x, obj.physics.position.y + obj.size.y + epsilon},
+                {obj.physics.position.x + obj.size.x + epsilon, obj.physics.position.y},
+                {obj.physics.position.x, obj.physics.position.y - epsilon}
+    };
+
+    for (const auto& p : tiles) {
+        int x = static_cast<int>(std::floor(p.x));
+        int y = static_cast<int>(std::floor(p.y));
+        Tile& tile = tilemap(x, y);
         if (!tile.event_name.empty()) {
             auto itr = events.find(tile.event_name);
             if (itr == events.end()) {
