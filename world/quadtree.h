@@ -16,13 +16,13 @@ struct AABB {
     bool intersects(AABB other) const;
 };
 
-class Quadtree {
+class QuadTree {
 public:
-    Quadtree(AABB boundary);
+    QuadTree(AABB boundary);
 
     void clear(); // remove children and any objects stored
 
-    bool insert(GameObject* point);
+    bool insert(GameObject* obj);
     std::vector<GameObject*> query_range(AABB range) const;
 
     void subdivide();
@@ -34,8 +34,8 @@ public:
     AABB boundary;
 
     // objects in this node
-    std::vector<GameObject*> nodes;
+    std::vector<GameObject*> objects;
 
     // children
-    std::shared_ptr<Quadtree> north_west,  north_east, south_west, south_east;
+    std::shared_ptr<QuadTree> north_west,  north_east, south_west, south_east;
 };

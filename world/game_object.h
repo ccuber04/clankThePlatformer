@@ -11,6 +11,7 @@
 
 class World;
 class Input;
+class QuadTree;
 
 using Sprites = std::map<std::string, AnimatedSprite>;
 
@@ -24,6 +25,8 @@ public:
     std::pair<Vec<float>, Color> get_sprite() const;
     void set_sprite(const std::string& next_sprite);
 
+    AABB get_bounding_box();
+
     // Player data
     std::string obj_name;
     Physics physics;
@@ -34,4 +37,9 @@ public:
     Sprites sprites;
     Sprite sprite;
     std::string sprite_name;
+
+    // combat stuff
+    int health;
+    int max_health;
+    int damage;
 };

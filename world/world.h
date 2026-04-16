@@ -1,11 +1,10 @@
 #pragma once
 
-#include <memory>
-
 #include "game_object.h"
 #include "tilemap.h"
 #include "vec.h"
 #include "events.h"
+#include "quadtree.h"
 
 class GameObject;
 class Level;
@@ -22,6 +21,8 @@ public:
     void move_to(Vec<float>& position, const Vec<float>& size, Vec<float>& velocity);
     void update(float dt);
     void load_level(const Level& level);
+    void touch_tiles(GameObject& obj);
+    void build_quadtree();
 
     Tilemap tilemap;
     bool end_level{false};
@@ -31,5 +32,5 @@ public:
     std::vector<GameObject*> game_objects;
     Events events;
 
-    void touch_tiles(GameObject& obj);
+    QuadTree quadtree;
 };

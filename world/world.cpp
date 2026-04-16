@@ -1,6 +1,7 @@
 #include "world.h"
 
 #include <algorithm>
+#include <iostream>
 
 #include "game_object.h"
 #include "keyboard_input.h"
@@ -9,9 +10,10 @@
 #include "vec.h"
 #include "physics.h"
 #include "audio.h"
+#include "../game.h"
 
 World::World(const Level& level, Audio& audio, GameObject* player, Events events)
-    : tilemap{level.width, level.height}, audio{&audio}, player{player}, events{events} {
+    : tilemap{level.width, level.height}, audio{&audio}, player{player}, events{events}, quadtree{AABB{{level.width / 2.0f, level.height / 2.0f}, {level.width / 2.0f, level.height / 2.0f}}}{
     load_level(level);
 }
 
@@ -144,6 +146,13 @@ void World::update(float dt) {
 
         touch_tiles(*obj);
     }
+
+    // check for collision with the player
+    build_quadtree();
+    std::vector<GameObject*> collides_with = quadtree.query_range(player->get_bounding_box());
+    if (collides_with.size() > 1) {
+        std::cout << "collided\n";
+    }
 }
 
 
@@ -184,5 +193,13 @@ void World::touch_tiles(GameObject& obj) {
             }
             itr->second->perform(*this, obj);
         }
+    }
+}
+
+void World::build_quadtree() {
+    quadtree.clear();
+
+    for (auto obj : game_objects) {
+        quadtree.insert(obj);
     }
 }

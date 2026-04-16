@@ -1,7 +1,7 @@
 #include "game_object.h"
 
-#include "action.h"
 #include "input.h"
+#include "quadtree.h"
 
 GameObject::GameObject(std::string name, FSM* fsm, Input* input, const Color& color)
     : obj_name{name}, fsm{fsm}, input{input}, color{color} {}
@@ -39,3 +39,5 @@ void GameObject::set_sprite(const std::string &next_sprite) {
 
     sprite = sprites[sprite_name].get_sprite();
 }
+
+AABB
