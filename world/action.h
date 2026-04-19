@@ -7,7 +7,8 @@ enum class ActionType {
     MoveRight,
     Crouch,
     CrouchMoveLeft,
-    CrouchMoveRight
+    CrouchMoveRight,
+    AttackAll
 };
 
 class World;
@@ -32,5 +33,9 @@ class MoveLeft : public Action {
 };
 
 class Crouch : public Action {
+    void perform(World& world, GameObject& obj) override;
+};
+
+class AttackAll : public Action {
     void perform(World& world, GameObject& obj) override;
 };

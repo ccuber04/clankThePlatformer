@@ -11,7 +11,7 @@
 
 class World;
 class Input;
-class QuadTree;
+class AABB;
 
 using Sprites = std::map<std::string, AnimatedSprite>;
 
@@ -26,6 +26,9 @@ public:
     void set_sprite(const std::string& next_sprite);
 
     AABB get_bounding_box();
+
+    void take_damage(int attack_damage);
+    bool flash_sprite() const;
 
     // Player data
     std::string obj_name;
@@ -42,4 +45,7 @@ public:
     int health;
     int max_health;
     int damage;
+    bool is_alive{true};
+
+    double iframe{0.0};
 };

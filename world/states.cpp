@@ -44,6 +44,9 @@ Action* Standing::input(World& world, GameObject& obj, ActionType action_type) {
         obj.fsm->transition(Transition::Crouch, world, obj);
         return new Crouch();
     }
+    if (action_type == ActionType::AttackAll) {
+        obj.fsm->transition(Transition::AttackAll, world, obj);
+    }
     return nullptr;
 }
 
@@ -152,4 +155,21 @@ Action* DoubleJump::input(World& world, GameObject& obj, ActionType action_type)
         return new MoveRight();
     }
     return nullptr;
+}
+
+// AttackAllEnemies
+void AttackAllEnemies::on_enter(World& world, GameObject& obj) {
+    obj.color = {255, 100, 0, 255};
+    for (auto& enemy : world.game_objects) {
+        if (enemy == world.player) continue;
+        enemy->take_damage(obj.damage);
+    }
+    elapsed = 0;
+}
+
+void AttackAllEnemies::update(World& world, GameObject& obj, double dt) {
+    elapsed += dt;
+    if (elapsed >= cooldown) {
+        obj.fsm->transition(Transition::Stop, world, obj);
+    }
 }

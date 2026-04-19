@@ -26,30 +26,40 @@ Game::~Game() {
 }
 
 void Game::handle_event(SDL_Event* event) {
-    player->input->collect_discrete_event(event);
+    switch (mode) {
+        case GameMode::Playing:
+            player->input->collect_discrete_event(event);
+            break;
+    }
 }
 
 void Game::input() {
-    player->input->get_input();
-    camera.handle_input();
+    switch (mode) {
+        case GameMode::Playing:
+            player->input->get_input();
+            camera.handle_input();
+    }
 }
-
 void Game::update() {
     Uint64 now = SDL_GetPerformanceCounter();
     lag += (now - prev_counter) / (float)performance_frequency;
     prev_counter = now;
     while (lag >= dt) {
-        player->input->handle_input(*world, *player);
-        world->update(dt);
+        switch (mode) {
+            case GameMode::Playing:
+                player->input->handle_input(*world, *player);
+                world->update(dt);
 
-        // put the camera slightly ahead of the player
-        float L = length(player->physics.velocity);
-        Vec displacement = 8.0f * player->physics.velocity / (1.0f + L);
-        camera.update(player->physics.position + displacement, dt);
-        lag -= dt;
-        if (world->end_level) {
-            load_level();
+                // put the camera slightly ahead of the player
+                float L = length(player->physics.velocity);
+                Vec displacement = 8.0f * player->physics.velocity / (1.0f + L);
+                camera.update(player->physics.position + displacement, dt);
+                if (world->end_level) {
+                    load_level();
+                }
+                break;
         }
+        lag -= dt;
     }
 }
 
@@ -81,6 +91,7 @@ void Game::create_player() {
     Transitions transitions = {
         {{StateType::Standing, Transition::Jump}, StateType::InAir},
         {{StateType::Standing, Transition::Move}, StateType::Running},
+        {{StateType::Standing, Transition::AttackAll}, StateType::AttackAll},
         {{StateType::Standing, Transition::Crouch}, StateType::Crouching},
         {{StateType::InAir, Transition::Stop}, StateType::Standing},
         {{StateType::InAir, Transition::Move}, StateType::Running},
@@ -88,14 +99,16 @@ void Game::create_player() {
         {{StateType::Running, Transition::Stop}, StateType::Standing},
         {{StateType::Running, Transition::Jump}, StateType::InAir},
         {{StateType::Crouching, Transition::Stop}, StateType::Standing},
-        {{StateType::DoubleJump, Transition::Stop}, StateType::Standing}
+        {{StateType::DoubleJump, Transition::Stop}, StateType::Standing},
+        {{StateType::AttackAll, Transition::Stop}, StateType::Standing}
     };
     States states = {
         {StateType::Standing, new Standing()},
         {StateType::InAir, new InAir()},
         {StateType::Running, new Running()},
         {StateType::Crouching, new Crouching()},
-        {StateType::DoubleJump, new DoubleJump()}
+        {StateType::DoubleJump, new DoubleJump()},
+        {StateType::AttackAll, new AttackAllEnemies()}
     };
     FSM* fsm = new FSM{transitions, states, StateType::Standing};
     KeyboardInput* input = new KeyboardInput();

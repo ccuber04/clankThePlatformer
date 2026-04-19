@@ -1,10 +1,14 @@
 #pragma once
 
+#include <memory>
+
 #include "graphics.h"
 #include "world.h"
 #include "camera.h"
 #include "game_object.h"
 #include "audio.h"
+
+enum class GameMode{Playing, GameOver};
 
 class Game {
 public:
@@ -36,4 +40,7 @@ private:
     void create_player();
     int current_level{0};
     void load_level();
+
+    // game state
+    GameMode mode{GameMode::Playing};
 };

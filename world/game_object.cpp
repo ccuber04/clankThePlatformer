@@ -1,5 +1,6 @@
 #include "game_object.h"
 
+#include "action.h"
 #include "input.h"
 #include "quadtree.h"
 
@@ -17,6 +18,7 @@ void GameObject::update(World& world, double dt) {
     }
     sprites[sprite_name].update(dt);
     set_sprite(sprite_name);
+    if (iframe > 0.0) iframe -= dt;
 }
 
 std::pair<Vec<float>, Color> GameObject::get_sprite() const {
@@ -40,4 +42,27 @@ void GameObject::set_sprite(const std::string &next_sprite) {
     sprite = sprites[sprite_name].get_sprite();
 }
 
-AABB
+AABB GameObject::get_bounding_box() {
+    Vec<float> half_size = {size.x / 2.0f, size.y / 2.0f};
+    Vec<float> center = {physics.position.x + half_size.x, physics.position.y + half_size.y};
+    return {center, half_size};
+}
+
+void GameObject::take_damage(int attack_damage) {
+    if (iframe > 0.0) return;
+
+    health -= attack_damage;
+    iframe = 2;
+    if (health <= 0) {
+        is_alive = false;
+    }
+}
+
+bool GameObject::flash_sprite() const {
+    if (iframe <= 0.0) {
+        return false;
+    }
+
+    // alternate overlay on/off every 80 ms
+    return ((SDL_GetTicks() / 80) % 2) == 0;
+}
