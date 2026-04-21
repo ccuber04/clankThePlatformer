@@ -54,8 +54,15 @@ void Game::update() {
                 float L = length(player->physics.velocity);
                 Vec displacement = 8.0f * player->physics.velocity / (1.0f + L);
                 camera.update(player->physics.position + displacement, dt);
+
+                // check for level end
                 if (world->end_level) {
                     load_level();
+                }
+
+                // check for game over
+                if (world->end_game) {
+                    mode = GameMode::GameOver;
                 }
                 break;
         }
@@ -76,6 +83,10 @@ void Game::render() {
     // enemies
     for (auto& obj : world->game_objects) {
         camera.render(*obj);
+    }
+
+    if (mode == GameMode::GameOver) {
+        camera.render_game_over();
     }
 
     // update
