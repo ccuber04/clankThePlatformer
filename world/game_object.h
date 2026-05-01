@@ -18,7 +18,7 @@ using Sprites = std::map<std::string, AnimatedSprite>;
 class GameObject {
 public:
     GameObject(std::string name, FSM* fsm, Input* input, const Color& color={255, 255, 255, 255});
-    ~GameObject();
+    virtual ~GameObject();
 
     virtual void update(World& world, double dt);
 

@@ -9,6 +9,7 @@
 class GameObject;
 class Level;
 class Audio;
+class Projectile;
 
 class World {
 public:
@@ -20,6 +21,7 @@ public:
     GameObject* create_player(const Level& level);
     void move_to(Vec<float>& position, const Vec<float>& size, Vec<float>& velocity);
     void update(float dt);
+    void update_object(GameObject* obj, double dt);
     void load_level(const Level& level);
     void touch_tiles(GameObject& obj);
     void build_quadtree();
@@ -37,4 +39,6 @@ public:
 
     // items
     std::map<std::string, std::function<GameObject*()>> available_items;
+
+    std::vector<Projectile*> projectiles;
 };

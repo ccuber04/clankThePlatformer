@@ -3,8 +3,7 @@
 #include "action.h"
 #include "game_object.h"
 #include "world.h"
-
-#include <iostream>
+#include "random.h"
 
 // Helper function
 bool on_platform(World& world, GameObject& obj) {
@@ -113,6 +112,27 @@ Action* Running::input(World& world, GameObject& obj, ActionType action_type) {
         return new Crouch();
     }
     return nullptr;
+}
+
+// Patrolling
+void Patrolling::on_enter(World& world, GameObject& obj) {
+    // set cooldown to a random amount between 3-10 secs
+    elapsed = 0;
+    cooldown = randint(3, 10);
+    Running::on_enter(world, obj);
+}
+
+void Patrolling::update(World&, GameObject&, double dt) {
+    elapsed += dt;
+}
+
+Action* Patrolling::input(World& world, GameObject& obj, ActionType action_type) {
+    // check if time to stop
+    if (elapsed >= cooldown) {
+        return Running::input(world, obj, ActionType::None);
+    }
+
+    return Running::input(world, obj, action_type);
 }
 
 // Crouching

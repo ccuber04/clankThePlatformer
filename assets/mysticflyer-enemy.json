@@ -1,0 +1,35 @@
+{
+  "sprites" : [
+    {
+      "name" : "idle",
+      "filename" : "mysticflyer-enemy.png",
+      "location" : [0, 0],
+      "size" : [64, 64],
+      "scale" : 1.7,
+      "number_of_frames" : 8,
+      "dt_per_frame" : 0.1
+    },
+    {
+      "name" : "walking",
+      "filename" : "mysticflyer-enemy.png",
+      "location" : [0, 64],
+      "size" : [64, 64],
+      "scale" : 1.7,
+      "number_of_frames" : 8,
+      "dt_per_frame" : 0.1
+    }
+  ],
+  "physics" : {
+    "velocity": [0, 0],
+    "acceleration": [0, 0],
+    "gravity": 0.0,
+    "damping": 0.88,
+    "walk_acceleration": 60.0,
+    "jump_velocity": 0.0,
+    "terminal_velocity": 30.0
+  },
+  "size": [1, 2],
+  "health": 7,
+  "max_health": 7,
+  "damage": 5
+}

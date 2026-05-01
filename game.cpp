@@ -4,6 +4,8 @@
 #include "states.h"
 #include "asset_manager.h"
 #include "input.h"
+#include "ai_input.h"
+#include "projectile.h"
 
 Game::Game(std::string title, int width, int height)
     : graphics{title, width, height}, camera{graphics, 64}, dt{1.0/60.0}, lag{0.0}, performance_frequency{SDL_GetPerformanceFrequency()}, prev_counter{SDL_GetPerformanceCounter()} {
@@ -12,7 +14,6 @@ Game::Game(std::string title, int width, int height)
 
     // Give player its assets then put it in the correct state
     create_player();
-    AssetManager::get_game_object_details("player", graphics, *player);
 
     // load first level
     load_level();
@@ -28,7 +29,11 @@ Game::~Game() {
 void Game::handle_event(SDL_Event* event) {
     switch (mode) {
         case GameMode::Playing:
-            player->input->collect_discrete_event(event);
+            auto action = player->input->collect_discrete_event(event);
+            if (action) {
+                action->perform(*world, *player);
+                delete action;
+            }
             break;
     }
 }
@@ -47,7 +52,9 @@ void Game::update() {
     while (lag >= dt) {
         switch (mode) {
             case GameMode::Playing:
-                player->input->handle_input(*world, *player);
+                for (auto& obj : world->game_objects) {
+                    obj->input->handle_input(*world, *obj);
+                }
                 world->update(dt);
 
                 // put the camera slightly ahead of the player
@@ -77,12 +84,13 @@ void Game::render() {
     // draw the world
     camera.render(world->tilemap);
 
-    // draw the player
-    camera.render(*player);
-
     // enemies
     for (auto& obj : world->game_objects) {
         camera.render(*obj);
+    }
+
+    for (auto& projectile : world->projectiles) {
+        camera.render(*projectile);
     }
 
     if (mode == GameMode::GameOver) {
@@ -125,6 +133,7 @@ void Game::create_player() {
     KeyboardInput* input = new KeyboardInput();
 
     player = std::make_unique<GameObject>("player", fsm, input);
+    AssetManager::get_game_object_details("player", graphics, *player);
 }
 
 void Game::load_level() {
@@ -142,10 +151,40 @@ void Game::load_level() {
             continue;
         }
         AssetManager::get_game_object_details(obj->obj_name + "-enemy", graphics, *obj, true);
+        update_enemies(*obj);
     }
+
+    // get the available items
+    AssetManager::get_available_items("items", graphics, *world);
+
+    GameObject* obj = world->available_items["fireball"]();
 
     player->physics.position = {static_cast<float>(level.player_spawn_location.x), static_cast<float>(level.player_spawn_location.y)};
     player->fsm->current_state->on_enter(*world, *player);
     camera.set_location(player->physics.position);
     audio.play_sounds("background", true);
+}
+
+void Game::update_enemies(GameObject& obj) {
+    Transitions transitions;
+    States states;
+
+    if (obj.obj_name == "mushroom" || obj.obj_name == "mysticflyer") {
+        transitions = {
+            {{StateType::Standing, Transition::Move}, StateType::Patrolling},
+            {{StateType::Patrolling, Transition::Stop}, StateType::Standing}
+        };
+
+        states = {
+            {StateType::Standing, new Standing()},
+            {StateType::Patrolling, new Patrolling()}
+        };
+    }
+
+    FSM* fsm = new FSM{transitions, states, StateType::Patrolling};
+    obj.fsm = fsm;
+
+    Input* input = new AiInput();
+    input->next_action_type = ActionType::MoveLeft;
+    obj.input = input;
 }

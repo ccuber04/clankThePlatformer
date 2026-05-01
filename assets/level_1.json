@@ -1,4 +1,27 @@
 {
+    "enemies": [
+        {
+            "enemy": "mysticflyer",
+            "pos": [
+                3.0,
+                3.0
+            ]
+        },
+        {
+            "enemy": "mushroom",
+            "pos": [
+                10.0,
+                4.0
+            ]
+        },
+        {
+            "enemy": "mysticflyer",
+            "pos": [
+                16.0,
+                7.0
+            ]
+        }
+    ],
     "height": 15,
     "player_spawn_location": [
         1,

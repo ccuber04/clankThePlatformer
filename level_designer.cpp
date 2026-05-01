@@ -92,10 +92,10 @@ void LevelDesigner::input() {
         place_player();
     }
     if (keys[SDL_SCANCODE_1]) {
-        // place enemy 1
+        place_enemy("mushroom");
     }
     if (keys[SDL_SCANCODE_2]) {
-        // place enemy 2
+        place_enemy("mysticflyer");
     }
 
     // timer for scrolling

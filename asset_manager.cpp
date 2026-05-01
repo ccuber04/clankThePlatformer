@@ -127,6 +127,8 @@ void AssetManager::get_available_items(const std::string& filename, Graphics& gr
         std::string name = j.at("name").get<std::string>();
         Physics physics = j.at("physics").get<Physics>();
         double lifetime = j.at("lifetime").get<double>();
+        Vec<float> size = j.at("size").get<Vec<float>>();
+        double damage = j.at("damage").get<double>();
         std::vector<Sprite> sprites_from_json = j.at("sprites").get<std::vector<Sprite>>();
 
         // build the sprites
@@ -134,10 +136,12 @@ void AssetManager::get_available_items(const std::string& filename, Graphics& gr
         convert_sprites(sprites_from_json, graphics, &tmp, false);
         auto sprites = tmp.sprites;
 
-        world.available_items[name] = [name, physics, lifetime, sprites]() {
+        world.available_items[name] = [name, physics, lifetime, sprites, size, damage]() {
             auto projectile = new Projectile{name, nullptr, nullptr, lifetime};
             projectile->physics = physics;
             projectile->sprites = sprites;
+            projectile->size = size;
+            projectile->damage = damage;
             projectile->set_sprite("idle");
             return projectile;
         };

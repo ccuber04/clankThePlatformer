@@ -19,6 +19,8 @@ public:
     void update();
     void render();
 
+    void update_enemies(GameObject& obj);
+
 private:
     std::unique_ptr<GameObject> player;
     World* world = nullptr;
