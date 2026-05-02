@@ -212,6 +212,9 @@ void World::load_level(const Level& level) {
         game_objects.push_back(enemy);
     }
 
+    // get the backgrounds
+    backgrounds = level.backgrounds;
+
     game_objects.push_back(player);
 }
 

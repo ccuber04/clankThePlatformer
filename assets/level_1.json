@@ -27,6 +27,33 @@
         1,
         2
     ],
+    "backgrounds": [
+        {
+            "filename": "szadi_BG1.png",
+            "scale": 5,
+            "distance": 7
+        },
+        {
+            "filename": "szadi_BG2.png",
+            "scale": 5,
+            "distance": 6
+        },
+        {
+            "filename": "szadi_BG3A.png",
+            "scale": 5,
+            "distance": 4
+        },
+        {
+            "filename": "szadi_BG4.png",
+            "scale": 5,
+            "distance": 2
+        },
+        {
+            "filename": "szadi_BG5.png",
+            "scale": 5,
+            "distance": 1
+        }
+    ],
     "tile_filenames": [
         "castle_tiles.json"
     ],
