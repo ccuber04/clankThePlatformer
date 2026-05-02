@@ -2,6 +2,7 @@
 
 #include "vec.h"
 #include "tilemap.h"
+#include "audio.h"
 
 #include <string>
 #include <map>
@@ -25,4 +26,5 @@ public:
     EnemyLocations enemy_locations;
 
     std::vector<Background> backgrounds;
+    std::vector<Sound> sounds;
 };

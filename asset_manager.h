@@ -22,6 +22,7 @@ void from_json(const nlohmann::json& j, Vec<T>& v) {
     v.y = j.at(1).get<T>();
 }
 
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Sound, name, filename, loop_forever);
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Background, filename, scale, distance);
 
 // json for Level
@@ -30,6 +31,7 @@ inline void to_json(nlohmann::json& j, const Level& level) {
     j["height"] = level.height;
     j["tile_filenames"] = level.tile_filenames;
     j["player_spawn_location"] = level.player_spawn_location;
+    j["sounds"] = level.sounds;
     j["backgrounds"] = level.backgrounds;
     j["tiles"] = nlohmann::json::array();
     for (const auto& [pos, tile] : level.tile_locations) {
@@ -49,6 +51,7 @@ inline void from_json(const nlohmann::json& j, Level& level) {
     level.width = j.at("width").get<int>();
     level.height = j.at("height").get<int>();
     level.tile_filenames = j.at("tile_filenames").get<std::vector<std::string>>();
+    level.sounds = j.at("sounds").get<std::vector<Sound>>();
     level.backgrounds = j.at("backgrounds").get<std::vector<Background>>();
     level.player_spawn_location = j.contains("player_spawn_location") ? j.at("player_spawn_location").get<Vec<int>>() : Vec<int>{-1, -1};
     if (j.contains("tiles")) {

@@ -27,6 +27,13 @@
         1,
         2
     ],
+    "sounds": [
+        {
+            "name": "background",
+            "filename": "alkakrab_to_the_end.mp3",
+            "loop_forever": true
+        }
+    ],
     "backgrounds": [
         {
             "filename": "szadi_BG1.png",
