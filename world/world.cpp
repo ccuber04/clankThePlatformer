@@ -116,6 +116,9 @@ void World::move_to(Vec<float>& position, const Vec<float>& size, Vec<float>& ve
 }
 
 void World::update(float dt) {
+    // update tiles
+    tilemap.update(dt);
+
     // update each object
     for (auto& obj : game_objects) {
         update_object(obj, dt);

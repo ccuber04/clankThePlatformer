@@ -67,7 +67,7 @@
         },
         {
             "filename": "alkakrab_victory.mp3",
-            "loop_forever": false,
+            "loop_forever": true,
             "name": "won"
         },
         {

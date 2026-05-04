@@ -73,8 +73,25 @@ inline void from_json(const nlohmann::json& j, Level& level) {
 // these are for the json library - NOTE: if I want this to be more flexible, I create my own to/from json functions and can provide default values. Then json is strict formatted
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Sprite, name, filename, location, size, scale, dt_per_frame, number_of_frames);
 NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Physics, velocity, acceleration, gravity, damping, walk_acceleration, jump_velocity, terminal_velocity);
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Tile, sprite, event_name, blocking);
 
+inline void to_json(nlohmann::json& j, const Tile& tile) {
+    j["sprite"] = tile.sprite;
+    j["event_name"] = tile.event_name;
+    j["blocking"] = tile.blocking;
+
+    if (tile.animation_random_start) {
+        j["animation_random_start"] = tile.animation_random_start;
+    }
+}
+
+inline void from_json(const nlohmann::json& j, Tile& tile) {
+    tile.sprite = j.at("sprite").get<Sprite>();
+    tile.event_name = j.at("event_name").get<std::string>();
+    tile.blocking = j.at("blocking").get<bool>();
+    tile.animation_random_start = j.contains("animation_random_start")
+        ? j.at("animation_random_start").get<bool>()
+        : false;
+}
 namespace AssetManager {
     void get_game_object_details(const std::string& name, Graphics& graphics, GameObject& obj, bool random_start=false);
     void get_level_details(Graphics& graphics, Level& level);

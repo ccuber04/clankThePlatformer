@@ -2,6 +2,7 @@
 
 #include <vector>
 
+#include "animated_sprite.h"
 #include "sprite.h"
 
 struct Background {
@@ -13,7 +14,11 @@ struct Background {
 
 class Tile {
 public:
+    void update(double dt);
+
     Sprite sprite;
+    AnimatedSprite animated_sprite;
+    bool animation_random_start{true};
     bool blocking{false};
     std::string id;
     std::string event_name;
@@ -22,6 +27,8 @@ public:
 class Tilemap {
 public:
     Tilemap(int width, int height);
+
+    void update(double dt);
 
     // access tiles
     const Tile& operator()(int x, int y) const;

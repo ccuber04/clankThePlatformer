@@ -61,10 +61,24 @@ void AssetManager::get_game_object_details(const std::string& name, Graphics& gr
 
 void convert_to_tiles(Graphics& graphics, Level& level, std::vector<Tile>& tiles, const std::string& filename) {
     for (auto& tile : tiles) {
+        auto first_location = tile.sprite.location;
         tile.sprite.filename = (std::filesystem::current_path() / "assets" / tile.sprite.filename).string();
         tile.sprite.texture_id = graphics.get_texture_id(tile.sprite.filename);
         tile.sprite.shift = {-tile.sprite.size.x/2, -tile.sprite.size.y}; // anchor sprite at bottom corner
         tile.sprite.center = tile.sprite.size / 2.0f;
+
+        if (tile.sprite.number_of_frames > 1) {
+            std::vector<Sprite> sprite_frames;
+            Sprite sprite = tile.sprite;
+            for (int i = 0; i < tile.sprite.number_of_frames; ++i) {
+                sprite.location = {first_location.x + i * sprite.size.x, first_location.y};
+                sprite_frames.push_back(sprite);
+            }
+            int starting_frame = tile.animation_random_start ? randint(0, sprite.number_of_frames - 1) : 0;
+            tile.animated_sprite = AnimatedSprite{sprite_frames, sprite.dt_per_frame, starting_frame};
+            tile.sprite = tile.animated_sprite.get_sprite();
+        }
+
         tile.id = filename + ":" + tile.sprite.name;
         level.tile_types[tile.id] = tile;
     }

@@ -11,7 +11,64 @@
         "dt_per_frame": 0.1
       },
       "blocking": true,
-      "event_name": "game_won"
+      "event_name": "game_won",
+      "animation_random_start": false
+    },
+    {
+      "sprite": {
+        "name": "lantern",
+        "filename": "lights.png",
+        "location": [0, 0],
+        "size": [16, 48],
+        "scale": 3,
+        "number_of_frames": 4,
+        "dt_per_frame": 0.2
+      },
+      "blocking": false,
+      "event_name": "",
+      "animation_random_start": true
+    },
+    {
+      "sprite": {
+        "name": "right_torch",
+        "filename": "lights.png",
+        "location": [0, 48],
+        "size": [16, 32],
+        "scale": 3,
+        "number_of_frames": 4,
+        "dt_per_frame": 0.2
+      },
+      "blocking": false,
+      "event_name": "",
+      "animation_random_start": true
+    },
+    {
+      "sprite": {
+        "name": "left_torch",
+        "filename": "lights.png",
+        "location": [0, 80],
+        "size": [16, 32],
+        "scale": 3,
+        "number_of_frames": 4,
+        "dt_per_frame": 0.2
+      },
+      "blocking": false,
+      "event_name": "",
+      "animation_random_start": true
+    },
+    {
+      "sprite": {
+        "name": "torch",
+        "filename": "lights.png",
+        "location": [0, 112],
+        "size": [16, 32],
+        "scale": 3,
+        "number_of_frames": 4,
+        "dt_per_frame": 0.2
+      },
+      "blocking": false,
+      "event_name": "",
+      "animation_random_start": true
     }
   ]
 }

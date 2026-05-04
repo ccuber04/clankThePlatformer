@@ -3,6 +3,13 @@
 #include <stdexcept>
 #include <sstream>
 
+void Tile::update(double dt) {
+    if (sprite.number_of_frames == 1) return;
+
+    animated_sprite.update(dt);
+    sprite = animated_sprite.get_sprite();
+}
+
 Tilemap::Tilemap(int width, int height)
     : width{width}, height{height}, tiles(width*height) {
     if (width < 1) {
@@ -10,6 +17,12 @@ Tilemap::Tilemap(int width, int height)
     }
     if (height < 1) {
         throw std::runtime_error("height must be positive");
+    }
+}
+
+void Tilemap::update(double dt) {
+    for (auto& tile : tiles) {
+        tile.update(dt);
     }
 }
 
