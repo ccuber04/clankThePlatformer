@@ -6,7 +6,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [32, 144],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -19,7 +19,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [672, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -32,7 +32,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [704, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -45,7 +45,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [720, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -58,7 +58,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [192, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -71,7 +71,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [208, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -84,7 +84,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [224, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -97,7 +97,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [192, 208],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -110,7 +110,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [208, 208],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -123,7 +123,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [256, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -136,7 +136,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [272, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -149,7 +149,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [304, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -162,7 +162,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [256, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -175,7 +175,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [336, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -188,7 +188,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [352, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -201,7 +201,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [368, 192],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -214,7 +214,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [352, 208],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -227,7 +227,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [368, 208],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -240,7 +240,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [368, 208],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -253,7 +253,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [944, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -266,7 +266,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [992, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -279,7 +279,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [960, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -292,7 +292,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [944, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -305,7 +305,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1472, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -318,7 +318,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1488, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -331,7 +331,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1504, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -344,7 +344,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1520, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -357,7 +357,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1472, 112],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -370,7 +370,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1488, 112],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -383,7 +383,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1504, 112],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -396,7 +396,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1520, 112],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -409,7 +409,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1472, 128],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -422,7 +422,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1488, 128],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -435,7 +435,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1504, 128],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -448,7 +448,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1520, 128],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -461,7 +461,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1472, 144],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -474,7 +474,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1488, 144],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -487,7 +487,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1504, 144],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -500,7 +500,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [1520, 144],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -513,7 +513,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [64, 48],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -526,7 +526,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [80, 48],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -539,7 +539,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [96, 48],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -552,7 +552,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [112, 48],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -565,7 +565,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [32, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -578,7 +578,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [48, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -591,7 +591,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [64, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -604,7 +604,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [80, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -617,7 +617,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [96, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -630,7 +630,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [112, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -643,7 +643,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [32, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -656,7 +656,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [48, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -669,7 +669,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [64, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -682,7 +682,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [80, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -695,7 +695,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [96, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -708,7 +708,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [112, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -721,7 +721,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [32, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -734,7 +734,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [48, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -747,7 +747,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [64, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -760,7 +760,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [80, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -773,7 +773,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [176, 48],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -786,7 +786,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [192, 48],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -799,7 +799,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [176, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -812,7 +812,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [192, 64],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -825,7 +825,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [144, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -838,7 +838,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [160, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -851,7 +851,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [176, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -864,7 +864,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [192, 80],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -877,7 +877,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [144, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -890,7 +890,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [160, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },
@@ -903,7 +903,7 @@
         "filename": "szadi_main_lev_build.png",
         "location": [176, 96],
         "size": [16, 16],
-        "scale": 3,
+        "scale": 4,
         "number_of_frames": 1,
         "dt_per_frame": -1
       },

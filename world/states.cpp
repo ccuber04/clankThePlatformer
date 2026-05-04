@@ -1,6 +1,7 @@
 #include "states.h"
 
 #include "action.h"
+#include "audio.h"
 #include "game_object.h"
 #include "world.h"
 #include "random.h"
@@ -180,9 +181,10 @@ Action* DoubleJump::input(World& world, GameObject& obj, ActionType action_type)
 // AttackAllEnemies
 void AttackAllEnemies::on_enter(World& world, GameObject& obj) {
     obj.color = {255, 100, 0, 255};
+    obj.set_sprite("attack"); // TODO: player repeats sprite action more than once
     for (auto& enemy : world.game_objects) {
         if (enemy == world.player) continue;
-        enemy->take_damage(obj.damage);
+        enemy->take_damage(world, obj.damage);
     }
     elapsed = 0;
 }

@@ -1,4 +1,31 @@
 {
+    "backgrounds": [
+        {
+            "distance": 7.0,
+            "filename": "szadi_BG1.png",
+            "scale": 5.0
+        },
+        {
+            "distance": 6.0,
+            "filename": "szadi_BG2.png",
+            "scale": 5.0
+        },
+        {
+            "distance": 4.0,
+            "filename": "szadi_BG3A.png",
+            "scale": 5.0
+        },
+        {
+            "distance": 2.0,
+            "filename": "szadi_BG4.png",
+            "scale": 5.0
+        },
+        {
+            "distance": 1.0,
+            "filename": "szadi_BG5.png",
+            "scale": 5.0
+        }
+    ],
     "enemies": [
         {
             "enemy": "mysticflyer",
@@ -29,40 +56,34 @@
     ],
     "sounds": [
         {
-            "name": "background",
             "filename": "alkakrab_to_the_end.mp3",
-            "loop_forever": true
-        }
-    ],
-    "backgrounds": [
-        {
-            "filename": "szadi_BG1.png",
-            "scale": 5,
-            "distance": 7
+            "loop_forever": true,
+            "name": "background"
         },
         {
-            "filename": "szadi_BG2.png",
-            "scale": 5,
-            "distance": 6
+            "filename": "alkakrab_death.mp3",
+            "loop_forever": false,
+            "name": "lost"
         },
         {
-            "filename": "szadi_BG3A.png",
-            "scale": 5,
-            "distance": 4
+            "filename": "alkakrab_victory.mp3",
+            "loop_forever": false,
+            "name": "won"
         },
         {
-            "filename": "szadi_BG4.png",
-            "scale": 5,
-            "distance": 2
+            "filename": "rpg_se_death.wav",
+            "loop_forever": false,
+            "name": "death"
         },
         {
-            "filename": "szadi_BG5.png",
-            "scale": 5,
-            "distance": 1
+            "filename": "rpg_se_hit.wav",
+            "loop_forever": false,
+            "name": "hit"
         }
     ],
     "tile_filenames": [
-        "castle_tiles.json"
+        "castle_tiles.json",
+        "extra_tiles.json"
     ],
     "tiles": [
         {
@@ -820,6 +841,13 @@
                 3
             ],
             "tile": "castle_tiles.json:two_blue_brick_tiled_thin_right"
+        },
+        {
+            "pos": [
+                14,
+                4
+            ],
+            "tile": "extra_tiles.json:diamond_big"
         },
         {
             "pos": [

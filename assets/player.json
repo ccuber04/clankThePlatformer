@@ -44,6 +44,15 @@
       "scale": 2.4,
       "number_of_frames": 2,
       "dt_per_frame": 0.1
+    },
+    {
+      "name": "attack",
+      "filename": "hooded_protagonist.png",
+      "location": [0, 256],
+      "size": [32, 32],
+      "scale": 2.4,
+      "number_of_frames": 8,
+      "dt_per_frame": 0.1
     }
   ],
   "physics": {
