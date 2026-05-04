@@ -1,0 +1,17 @@
+{
+  "tiles":[
+    {
+      "sprite": {
+        "name": "diamond_big",
+        "filename": "diamond_big.png",
+        "location": [0, 0],
+        "size": [16, 14],
+        "scale": 4,
+        "number_of_frames": 7,
+        "dt_per_frame": 0.1
+      },
+      "blocking": true,
+      "event_name": "game_won"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
 #include "game_object.h"
 
 #include "action.h"
+#include "audio.h"
 #include "input.h"
 #include "quadtree.h"
+#include "world.h"
 
 GameObject::GameObject(std::string name, FSM* fsm, Input* input, const Color& color)
     : obj_name{name}, fsm{fsm}, input{input}, color{color} {}
@@ -48,12 +50,14 @@ AABB GameObject::get_bounding_box() {
     return {center, half_size};
 }
 
-void GameObject::take_damage(int attack_damage) {
+void GameObject::take_damage(const World& world, int attack_damage) {
     if (iframe > 0.0) return;
 
+    world.audio->play_sounds("hit");
     health -= attack_damage;
     iframe = 2;
     if (health <= 0) {
+        world.audio->play_sounds("death");
         is_alive = false;
     }
 }

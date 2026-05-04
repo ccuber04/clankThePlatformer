@@ -27,7 +27,7 @@ public:
 
     AABB get_bounding_box();
 
-    void take_damage(int attack_damage);
+    void take_damage(const World& world, int attack_damage);
     bool flash_sprite() const;
 
     // Player data

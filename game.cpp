@@ -67,6 +67,8 @@ void Game::update() {
                     load_level();
                 }
 
+                // event triggering world->end_game to be true
+
                 // check for game over
                 if (world->end_game) {
                     mode = GameMode::GameOver;
@@ -96,7 +98,12 @@ void Game::render() {
         camera.render(*projectile);
     }
 
-    if (mode == GameMode::GameOver) {
+    if (mode == GameMode::GameOver && player->is_alive) {
+        world->audio->play_sounds("won");
+        camera.render_game_won();
+    }
+    else if (mode == GameMode::GameOver && !player->is_alive) {
+        world->audio->play_sounds("lost");
         camera.render_game_over();
     }
 
@@ -106,6 +113,7 @@ void Game::render() {
 
 void Game::get_events() {
     events["next_level"] = new NextLevel();
+    events["game_won"] = new GameWon();
 }
 
 void Game::create_player() {
