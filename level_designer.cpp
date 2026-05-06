@@ -1,10 +1,10 @@
 #include "level_designer.h"
 #include "asset_manager.h"
 
-const int TILESIZE = 48;
-const int VISIBLE_MAP_WIDTH = 16;
-const int VISIBLE_MAP_HEIGHT = 15;
-constexpr int COLUMNS = 10;
+const int TILESIZE = 32;
+const int VISIBLE_MAP_WIDTH = 24;
+const int VISIBLE_MAP_HEIGHT = 22;
+constexpr int COLUMNS = 15;
 constexpr float PADDING = 2.0f;
 
 LevelDesigner::LevelDesigner(const std::string &level_name, int width, int height)
@@ -103,6 +103,14 @@ void LevelDesigner::input() {
         return;
     }
     lag = 0;
+    if (keys[SDL_SCANCODE_F]) {
+        if (tilemap(selected_tile.x, selected_tile.y).sprite.flip) {
+            tilemap(selected_tile.x, selected_tile.y).sprite.flip = false;
+        }
+        else {
+            tilemap(selected_tile.x, selected_tile.y).sprite.flip = true;
+        }
+    }
     if (keys[SDL_SCANCODE_LEFT]) {
         x_min--;
     }

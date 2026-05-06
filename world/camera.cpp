@@ -42,7 +42,17 @@ void Camera::handle_input() {
 
 void Camera::update(const Vec<float>& new_location, float dt) {
     goal = new_location;
-    physics.acceleration = (goal - physics.position) * 4.0f;
+
+    float d = distance(physics.position, goal);
+    float acceleration_strength = 4.0f;
+    if (d > 4.0f) {
+        acceleration_strength = 10.0f;
+    }
+    else if (d > 10.0f) {
+        acceleration_strength = 16.0f;
+    }
+
+    physics.acceleration = (goal - physics.position) * acceleration_strength;
 
     if (distance(physics.position, goal) < 0.5) {
         physics.velocity = {0, 0};

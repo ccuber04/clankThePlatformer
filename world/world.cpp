@@ -39,7 +39,7 @@ bool World::collides(const Vec<float>& position) const {
 }
 
 void World::move_to(Vec<float>& position, const Vec<float>& size, Vec<float>& velocity) {
-    float epsilon = 0.0f;
+    float epsilon = 0.001f;
     Vec<float> br{position.x + size.x - epsilon, position.y};
     Vec<float> tl{position.x, position.y + size.y - epsilon};
     Vec<float> tr{position.x + size.x - epsilon, position.y + size.y - epsilon};
@@ -204,7 +204,12 @@ void World::update_object(GameObject* obj, double dt) {
 
 void World::load_level(const Level& level) {
     for (const auto& [pos, tile_id] : level.tile_locations) {
-        tilemap(pos.x, pos.y) = level.tile_types.at(tile_id);
+        Tile tile = level.tile_types.at(tile_id);
+
+        if (tile.animation_random_start && tile.sprite.number_of_frames > 1) {
+            tile.randomize_animation_start();
+        }
+        tilemap(pos.x, pos.y) = tile;
     }
     audio->load_sounds(level.sounds);
 

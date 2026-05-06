@@ -40,6 +40,7 @@ public:
     Sprites sprites;
     Sprite sprite;
     std::string sprite_name;
+    bool flip_sprite{false};
 
     // combat stuff
     int health;

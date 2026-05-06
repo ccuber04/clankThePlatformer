@@ -19,7 +19,7 @@ public:
     Vec<float> world_to_screen(const Vec<float>& world_position) const;
     void set_location(const Vec<float>& new_location);
 
-    void render(const Vec<float>& position, const Color& color, Vec<float> size={1.0f, 1.0f}, bool filled=true) const;
+    void render(const Vec<float>& position, const Color& color, Vec<float> size={1.0f, 1.0f}, bool filled=false) const;
     void render(const Tilemap& tilemap) const;
     void render(const Vec<float>& position, const Sprite& sprite, Vec<float> size={1.0f, 1.0f}, bool flash=false) const;
     void render(const GameObject& obj) const;

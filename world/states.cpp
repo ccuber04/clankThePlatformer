@@ -117,14 +117,10 @@ Action* Running::input(World& world, GameObject& obj, ActionType action_type) {
 
 // Patrolling
 void Patrolling::on_enter(World& world, GameObject& obj) {
-    // set cooldown to a random amount between 3-10 secs
+    // set cooldown to a random amount between 3-10 seconds
     elapsed = 0;
     cooldown = randint(3, 10);
     Running::on_enter(world, obj);
-}
-
-void Patrolling::update(World&, GameObject&, double dt) {
-    elapsed += dt;
 }
 
 Action* Patrolling::input(World& world, GameObject& obj, ActionType action_type) {
@@ -134,6 +130,10 @@ Action* Patrolling::input(World& world, GameObject& obj, ActionType action_type)
     }
 
     return Running::input(world, obj, action_type);
+}
+
+void Patrolling::update(World&, GameObject&, double dt) {
+    elapsed += dt;
 }
 
 // Crouching

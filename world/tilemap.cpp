@@ -1,5 +1,7 @@
 #include "tilemap.h"
 
+#include "random.h"
+
 #include <stdexcept>
 #include <sstream>
 
@@ -7,6 +9,22 @@ void Tile::update(double dt) {
     if (sprite.number_of_frames == 1) return;
 
     animated_sprite.update(dt);
+    sprite = animated_sprite.get_sprite();
+}
+
+void Tile::randomize_animation_start() {
+    if (sprite.number_of_frames == 1) return;
+
+    auto first_location = sprite.location;
+    std::vector<Sprite> sprite_frames;
+
+    for (int i = 0; i < sprite.number_of_frames; ++i) {
+        sprite.location = {first_location.x + i * sprite.size.x, first_location.y};
+        sprite_frames.push_back(sprite);
+    }
+
+    int starting_frame = randint(0, sprite.number_of_frames - 1);
+    animated_sprite = AnimatedSprite{sprite_frames, sprite.dt_per_frame, starting_frame};
     sprite = animated_sprite.get_sprite();
 }
 

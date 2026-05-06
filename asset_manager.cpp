@@ -74,8 +74,7 @@ void convert_to_tiles(Graphics& graphics, Level& level, std::vector<Tile>& tiles
                 sprite.location = {first_location.x + i * sprite.size.x, first_location.y};
                 sprite_frames.push_back(sprite);
             }
-            int starting_frame = tile.animation_random_start ? randint(0, sprite.number_of_frames - 1) : 0;
-            tile.animated_sprite = AnimatedSprite{sprite_frames, sprite.dt_per_frame, starting_frame};
+            tile.animated_sprite = AnimatedSprite{sprite_frames, sprite.dt_per_frame, 0};
             tile.sprite = tile.animated_sprite.get_sprite();
         }
 

@@ -15,6 +15,7 @@ struct Background {
 class Tile {
 public:
     void update(double dt);
+    void randomize_animation_start();
 
     Sprite sprite;
     AnimatedSprite animated_sprite;

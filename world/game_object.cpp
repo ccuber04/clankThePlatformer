@@ -42,6 +42,7 @@ void GameObject::set_sprite(const std::string &next_sprite) {
     }
 
     sprite = sprites[sprite_name].get_sprite();
+    sprite.flip = flip_sprite;
 }
 
 AABB GameObject::get_bounding_box() {

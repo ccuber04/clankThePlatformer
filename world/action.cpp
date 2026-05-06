@@ -9,10 +9,12 @@ void Jump::perform(World&, GameObject& obj) {
 
 void MoveRight::perform(World&, GameObject& obj) {
     obj.physics.acceleration.x = obj.physics.walk_acceleration;
+    obj.flip_sprite = false;
 }
 
 void MoveLeft::perform(World&, GameObject& obj) {
     obj.physics.acceleration.x = - obj.physics.walk_acceleration;
+    obj.flip_sprite = true;
 }
 
 void Crouch::perform(World&, GameObject& obj) {
